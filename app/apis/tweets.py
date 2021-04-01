@@ -66,3 +66,17 @@ class TweetsResource(Resource):
     def get(self):  # GET method
         tweets = db.session.query(Tweet).all()
         return tweets, 200
+
+# FLASK_ENV=development pipenv run flask run
+
+
+# SELECT ALL
+# curl -X GET http://127.0.0.1:5000/tweets
+# SELECT ONE
+# curl -X GET http://127.0.0.1:5000/tweets/1
+# INSERT
+# curl -X POST -H "Content-Type: application/json" -d '{"text": "linuxize"}' http://127.0.0.1:5000/tweets
+# UPDATE
+# curl -X PATCH -H "Content-Type: application/json" -d '{"text": "TEST"}' http://127.0.0.1:5000/api/v1/product/5
+# DELETE
+# curl -X DELETE http://127.0.0.1:5000/api/v1/product/1
